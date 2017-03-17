@@ -225,3 +225,7 @@ console.log('Wanneer gebruik je de const keyword', 'als het niet aanpasbaar moet
 
 let indy = {naam:'indy', leeftijd:17, lengte:189, family:['a1', 'a2', 'a3']};
 console.log(indy);
+
+import { logbonus } from "functions";
+
+console.log(logbonus());
