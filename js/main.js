@@ -143,11 +143,14 @@ console.log(student.showName());
  * Schrijf een for loop om alle namen in de Array te laten zien (console.log())
  */
 console.log(9);
-var student = {'firstname':'sjaak'};
-student.showName = function () {
-    return this.firstname;
-};
-console.log(student.showName());
+var students = ['henk', 'jan', 'sjaak', 'feek', 'sjonny', 'anita', 'boef', 'henk', 'fred', 'willem'];
+students.forEach((value)=>{console.log(value);});
+// console.log(9);
+// var student = {'firstname':'sjaak'};
+// student.showName = function () {
+//     return this.firstname;
+// };
+// console.log(student.showName());
 /**
  * Opdracht 10: Strings samenvoegen
  * Maak een variabele met de naam firstName, sla je voornaam hierin op
@@ -155,9 +158,9 @@ console.log(student.showName());
  * Maak een variabele fullName, en zorg ervoor dat de variabelen 'firstName' en
  * 'lastName' hier samen in worden opgeslagen
  */
-console.log(10);
-var students = ['henk', 'jan', 'sjaak', 'feek', 'sjonny', 'anita', 'boef', 'henk', 'fred', 'willem'];
-students.forEach((value)=>{console.log(value);});
+let fn = "indy";
+let ln = "koning";
+let fullname = fn + " " + ln;
 /**
  * Opdracht 11: Random cijfers
  * console.log() een willekeurige cijfer tussen 0 en 5
