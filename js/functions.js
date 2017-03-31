@@ -1,6 +1,5 @@
-
-export function logbonus() {
-    export let array = ['a', 'b', 'c', 'd'];
+ function logbonus() {
+    let array = ['a', 'b', 'c', 'd'];
     console.log('bonus 1 \n dit is handig voor frameworks toevoegen in de js zelf en je kan je eigen bestanded verdelen waardoor het oerzictelijker word')
     console.log('bonus 2');
     console.log(array);
@@ -51,4 +50,4 @@ export function logbonus() {
 
 
 }
-
+export {logbonus};

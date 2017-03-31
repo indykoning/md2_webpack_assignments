@@ -194,6 +194,9 @@ console.log('Een factuur sla ik op in een:',
 
 console.log('Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
             { array : true, object : false, primitive : false });
+console.log(
+    'Als ik vanuit JavaScript een menu maak met knoppen, dan sla ik de knoppen op in een:',
+    { array : false, object : false, primitive : false });
 
 /**
  * Opdracht 13: Keywords
@@ -219,13 +222,53 @@ console.log('Wanneer gebruik je de const keyword', 'als het niet aanpasbaar moet
 /**
  * Opdracht 15: Objects en array
  * Maak een object voor jezelf (naam, leeftijd, lengte)
- * Maak in je object een array aan genaamd 'family' en vul deze array met namen uit je familie
+ * Maak in je object een array aan genaamd 'family' en vul deze array met namen
+ * uit je familie
  * (objecten en arrays kunnen in elkaar opgeslagen worden)
  */
 
 let indy = {naam:'indy', leeftijd:17, lengte:189, family:['a1', 'a2', 'a3']};
 console.log(indy);
 
-import { logbonus } from "functions";
+import * as Functions from "functions";
 
-console.log(logbonus());
+console.log(Functions.logbonus());
+/**
+ * Hieronder heb ik code geschreven die je nodig hebt voor vraag 16 en 17
+ * Aan deze code hoef je niets te veranderen
+ */
+
+Array.prototype.random = function() {
+    let randomIndex = Math.floor(Math.random() * this.length);
+    return this[ randomIndex ];
+};
+
+String.prototype.replaceAll = function(search, replacement) {
+    return this.replace(new RegExp(search, 'g'), replacement);
+};
+
+/**
+ * Opdracht 16: Custom prototype method gebruiken
+ * Maak een array met meerdere namen
+ * Probeer vervolgens de random() functie (die hierboven staat) te gebruiken
+ * Tip: je roept deze functie op dezelfde manier aan als bijvoorbeeld push() en
+ * splice().
+ * console.log() de naam die deze functie returned
+ */
+let namen = ['jan', 'peter', 'freek'];
+console.log(namen.random());
+/**
+ * Opdracht 17: Custom prototype method gebruiken
+ * Maak een variabele waarin je een lange tekst opslaat
+ * Probeer vervolgens de replaceAll() functie te gebruiken om een bepaald woord
+ * op alle plekken te vervangen voor een ander woord
+ * console.log() deze gewijzigde tekst
+ */
+let string = 'Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, ';
+console.log(string.replaceAll('Lorem', 'indy is pro'));
+/**
+ * Opdracht 18: Prototype based language
+ * Geef antwoord op onderstaande vraag
+ */
+console.log('Waarom heet JavaScript een prototype based language?',
+            'jouw antwoord: omdat ze andere objecten inheriten om verschillende en staandaard methods te hebben');
