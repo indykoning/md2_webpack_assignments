@@ -272,3 +272,39 @@ console.log(string.replaceAll('Lorem', 'indy is pro'));
  */
 console.log('Waarom heet JavaScript een prototype based language?',
             'jouw antwoord: omdat ze andere objecten inheriten om verschillende en staandaard methods te hebben');
+
+
+
+/**
+ * Opdracht 19: Zelf een custom prototype method maken
+ * Soms wil je een array leeg kunnen gooien. Het zou dus wel handig zijn als
+ * je bij elke array een empty() functie kunt aanroepen.
+ * Zorg ervoor dat deze functie er is en laat met 3 arrays zien dat hij werkt
+ */
+
+Array.prototype.empty = function(){
+    this.splice(0, this.length);
+    return this;
+};
+
+let theoTalen =  ['html', 'css', 'wordpress'];
+let color = ['blauw','rood','geel'];
+let nummers = [1,2,3,4,5];
+console.log(theoTalen.empty());
+console.log(nummers.empty());
+
+
+/**
+ * Opdracht 20: Monkey patching (?)
+ * Je begint nu in te zien hoe JS werkt. Probeer nu de splice() en push()
+ * functies van Arrays te overschrijven met een eigen functie.
+ * Maak 2 arrays aan en laat zien dat je code werkt
+ */
+Array.prototype.splice = function (begin, eind) {
+    for(let i = begin; i < eind; i++){
+        delete this[i];
+    }
+    return this;
+};
+
+console.log(color.splice(2,3));
